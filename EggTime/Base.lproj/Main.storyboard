@@ -181,6 +181,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="wxF-7x-Lnh" id="Oz1-nN-rmR"/>
                         <outlet property="timerlabel" destination="dzr-CC-2CC" id="o8z-p5-vuw"/>
                     </connections>
                 </viewController>

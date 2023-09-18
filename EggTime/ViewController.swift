@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     let hardTime = 12
     let timesDictionary = ["Soft":5,"Medium":7,"Hard":12]
     var loveScore = Int()
-    var secondsRemaining : Int?
+    var totalTime = 0
+    var secondPassed = 0
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var timerlabel: UILabel!
     override func viewDidLoad() {
         timerlabel.text = ""
@@ -35,14 +37,18 @@ class ViewController: UIViewController {
         switch name {
         case "Soft":
             print("\(softTime)")
-            secondsRemaining = softTime
+            totalTime = softTime
+           
+            
             
         case "Medium":
             print("\(mediumTime)")
-            secondsRemaining = mediumTime
+            totalTime = mediumTime
+          
         case "Hard":
             print("\(hardTime)")
-            secondsRemaining = hardTime
+            totalTime = hardTime
+         
         default:
             print("Error")
         }}
@@ -87,11 +93,17 @@ class ViewController: UIViewController {
     func countdownTimer()
     {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
-            if self.secondsRemaining! >= 0 {
-                self.timerlabel.text =   "\(self.secondsRemaining ?? 0) seconds left"
-                self.secondsRemaining! -= 1
+            if self.secondPassed < self.totalTime {
+               
+                self.secondPassed += 1
+                var progress = Float(self.secondPassed)/Float(self.totalTime)
+                self.progressBar.setProgress(progress, animated: true)
+                self.timerlabel.text =   "\(self.totalTime - self.secondPassed) seconds left"
+            
             } else {
                 self.timerlabel.text = "Done"
+                self.secondPassed = 0
+                self.progressBar.setProgress(0.0, animated: true)
                 Timer.invalidate()
             }
         }
