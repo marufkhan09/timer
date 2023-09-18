@@ -15,5 +15,15 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        buttonName(name: sender.titleLabel!.text!)
+    }
+    
+    
+   
+    func  buttonName(name: String){
+      print(name)
+    }
+    
 }
 
