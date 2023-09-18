@@ -11,28 +11,38 @@ class ViewController: UIViewController {
     let softTime = 5
     let mediumTime = 7
     let hardTime = 12
+    let timesDictionary = ["Soft":5,"Medium":7,"Hard":12]
     var loveScore = Int()
+    var secondsRemaining : Int?
+    @IBOutlet weak var timerlabel: UILabel!
     override func viewDidLoad() {
+        timerlabel.text = ""
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        loveScore = Int.random(in: 0...100)
+        //loveScore = Int.random(in: 0...100)
         //  buttonName(name: sender.titleLabel!.text!)
         //loveCalculator(loveScore: loveScore)
-        dayOfTheWeek(day: loveScore)
+        //dayOfTheWeek(day: loveScore)
+        buttonName(name: sender.titleLabel!.text!)
+        countdownTimer()
     }
     
     func  buttonName(name: String){
         switch name {
         case "Soft":
             print("\(softTime)")
+            secondsRemaining = softTime
+            
         case "Medium":
-            print("\(softTime)")
+            print("\(mediumTime)")
+            secondsRemaining = mediumTime
         case "Hard":
-            print("\(softTime)")
+            print("\(hardTime)")
+            secondsRemaining = hardTime
         default:
             print("Error")
         }}
@@ -74,6 +84,19 @@ class ViewController: UIViewController {
         
     }
     
+    func countdownTimer()
+    {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+            if self.secondsRemaining! >= 0 {
+                self.timerlabel.text =   "\(self.secondsRemaining ?? 0) seconds left"
+                self.secondsRemaining! -= 1
+            } else {
+                self.timerlabel.text = "Done"
+                Timer.invalidate()
+            }
+        }
+        
+    }
     
 }
 
