@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2AA2102AB8E07400B83808 /* alarm_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA2AA20F2AB8E07400B83808 /* alarm_sound.mp3 */; };
 		CA8AC66D2AB77D65004F6DFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8AC66C2AB77D65004F6DFF /* AppDelegate.swift */; };
 		CA8AC66F2AB77D65004F6DFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8AC66E2AB77D65004F6DFF /* SceneDelegate.swift */; };
 		CA8AC6712AB77D65004F6DFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8AC6702AB77D65004F6DFF /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA2AA20F2AB8E07400B83808 /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm_sound.mp3; path = "../../EggTimer-iOS13/EggTimer/alarm_sound.mp3"; sourceTree = "<group>"; };
 		CA8AC6692AB77D65004F6DFF /* EggTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8AC66C2AB77D65004F6DFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8AC66E2AB77D65004F6DFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		CA8AC66B2AB77D65004F6DFF /* EggTime */ = {
 			isa = PBXGroup;
 			children = (
+				CA2AA20F2AB8E07400B83808 /* alarm_sound.mp3 */,
 				CA8AC66C2AB77D65004F6DFF /* AppDelegate.swift */,
 				CA8AC66E2AB77D65004F6DFF /* SceneDelegate.swift */,
 				CA8AC6702AB77D65004F6DFF /* ViewController.swift */,
@@ -233,6 +236,7 @@
 			files = (
 				CA8AC6792AB77D66004F6DFF /* LaunchScreen.storyboard in Resources */,
 				CA8AC6762AB77D66004F6DFF /* Assets.xcassets in Resources */,
+				CA2AA2102AB8E07400B83808 /* alarm_sound.mp3 in Resources */,
 				CA8AC6742AB77D65004F6DFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
